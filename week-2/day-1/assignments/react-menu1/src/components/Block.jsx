@@ -1,8 +1,8 @@
 import styles from "./all.module.css"
 
-function Block(heading) {
+function Block(props) {
     return (
-        <div className={styles['block']} >{heading}</div>
+        <div style={{ background: props.colors }} className={styles['block']} >{props.heading}</div>
     )
 }
 
