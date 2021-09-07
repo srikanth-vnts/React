@@ -1,0 +1,11 @@
+.App{
+  background-color: rgb(228, 228, 228);
+  display:flex;
+  justify-content: center;  
+  min-height:50rem;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+}
