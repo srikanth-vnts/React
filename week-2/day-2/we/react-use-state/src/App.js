@@ -1,6 +1,6 @@
-import { useState } from "react";
 import styles from './App.module.css';
-import {Todos} from "./components/Todos.jsx"
+import { Todos } from "./components/Todos.jsx"
+import Counter from "./components/Counter.jsx"
 
 function App() {
 
@@ -16,11 +16,17 @@ function App() {
   // }
 
   return (
+    <>
     <div className={styles.App}>
-      <div className={styles.main} >
+      <div className={styles.mainTodo} >
         <Todos />
       </div>
-    </div>
+      </div>
+      <div className={styles.Counter}>
+        <Counter />
+
+      </div>
+      </>
   );
 }
 

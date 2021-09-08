@@ -1,0 +1,4 @@
+.changers{
+    display: flex;
+    flex-direction: row;
+}

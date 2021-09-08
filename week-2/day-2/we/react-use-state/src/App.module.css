@@ -5,7 +5,12 @@
   min-height:50rem;
 }
 
-.main{
+.mainTodo{
   display: flex;
   flex-direction: column;
+}
+.Counter{
+   display: flex;
+   justify-content: center;
+   text-align: center;
 }

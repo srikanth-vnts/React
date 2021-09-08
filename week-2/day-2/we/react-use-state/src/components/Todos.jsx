@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import styles from "./Todos.module.css"
 
+
 import TodosItem from "./TodosItem";
 
 const Todos = () => {
@@ -14,18 +15,32 @@ const Todos = () => {
         console.log(e.target.value);
     }
     const handleClick = () => {
-        setTodoList([...todoList, text]);
+        const payload = {
+            title: text,
+            status:false
+        }
+        setTodoList([...todoList, payload]);
         setText("")
-        console.log(text)
+        console.log([...todoList, payload])
 
+    } 
+    const handleToggle = (title) => {
+     const arr =   todoList.map((el) => {
+            if (el.title === title) {
+                el.status = true;
+            }
+            return el;
+        })
+        setTodoList(arr)
     }
-    
+
+
     return <div>
         
         <input className={styles.inp} value = {text} onChange={handleChange} type="text" placeholder="Add todo"/>
         <button className={styles.add} onClick={handleClick} >+</button>
         {todoList.map(el =>
-            <TodosItem e={el} ></TodosItem>)}
+            <TodosItem e={el} fun ={handleToggle} ></TodosItem>)}
         
     </div>
 }
